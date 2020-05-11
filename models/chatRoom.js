@@ -4,10 +4,11 @@ var findOrCreate = require('mongoose-findorcreate')
 var Schema = mongoose.Schema;
 
 var chatRoomSchema = new Schema({
-    roomName
+    roomName: String,
+    roomParticipant: String
 });
 
 UserSchema.plugin(findOrCreate);
 
-global.UserSchema = global.UserSchema || mongoose.model('User', UserSchema);
-module.exports = global.UserSchema;
+global.chatRoomSchema = global.chatRoomSchema || mongoose.model('chatRoom', chatRoomSchema);
+module.exports = global.chatRoomSchema;
