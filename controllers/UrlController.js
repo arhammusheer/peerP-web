@@ -32,6 +32,7 @@ urlController.savenote = function(req, res, next) {
       }
       user.notepad= req.body.notes;
       user.save();
+      req.user.notepad = user.notepad;
       res.status(201).redirect('/');
     });
   } else {
