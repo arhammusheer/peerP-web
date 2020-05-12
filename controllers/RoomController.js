@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var createError = require('http-errors');
+var rooms = require('../models/chatRoom');
 
 var urlController = {};
 

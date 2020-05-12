@@ -8,7 +8,7 @@ var chatRoomSchema = new Schema({
     roomParticipant: String
 });
 
-UserSchema.plugin(findOrCreate);
+chatRoomSchema.plugin(findOrCreate);
 
 global.chatRoomSchema = global.chatRoomSchema || mongoose.model('chatRoom', chatRoomSchema);
 module.exports = global.chatRoomSchema;

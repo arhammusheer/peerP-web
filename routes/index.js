@@ -15,6 +15,9 @@ router.get('/login', urlController.login);
 //profile page
 router.get('/profile', urlController.profile);
 
+//notepad saveData
+router.post('/notepad-save', urlController.savenote);
+
 // google Auth
 router.get('/auth/google',passport.authenticate('google', { scope: ['profile','email'] }));
 

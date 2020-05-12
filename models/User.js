@@ -9,7 +9,8 @@ var UserSchema = new Schema({
     lastName: String,
     googleId: String,
     email: String,
-    pictureUrl: String
+    pictureUrl: String,
+    notepad: String
 });
 
 UserSchema.plugin(findOrCreate);

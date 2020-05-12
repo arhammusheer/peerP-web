@@ -8,3 +8,12 @@ block content
         a.btn.btn-primary.very-rounded(href="/room/new")= "New Room"
     br
     .card-columns
+      .card.very-rounded
+        .card-header.very-rounded
+          .row.justify-content-between.p-2
+            h4= "Notepad"
+        .card-body
+          form(method="POST", action="/notepad-save")
+            textarea.form-control.very-rounded.bg-secondary.text-light(type="text", name="notes", rows=8)= user.notepad
+            br
+            input.btn.btn-primary.very-rounded(type="submit", value="Save")
