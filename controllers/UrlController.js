@@ -7,7 +7,9 @@ var urlController = {};
 
 urlController.home = function(req, res) {
   if (req.user){
-    res.render('index', { user : req.user, brand: "peerP" });
+    User.findById(req.user._id, function(err, userdata){
+      res.render('index', { user : userdata, brand: "peerP" });
+    });
   } else {
     res.render('public_index', {brand : "peerP"});
   }
@@ -15,7 +17,7 @@ urlController.home = function(req, res) {
 
 urlController.profile = function(req, res, next) {
   if(req.user){
-    req.user.notepad = User.findById(req.user._id).notepad;
+    console.log(notedata);
     res.render('profile', {user : req.user, brand: "peerP"});
   } else {
     next(createError(404));
@@ -30,7 +32,6 @@ urlController.savenote = function(req, res, next) {
       }
       user.notepad= req.body.notes;
       user.save();
-      req.user.notepad = user.notepad;
       res.status(201).redirect('/');
     });
   } else {
