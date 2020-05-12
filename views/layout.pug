@@ -2,12 +2,28 @@ doctype html
 html
   head
     title= title
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css')
     link(href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css", rel="stylesheet")
 
   body
+    nav.navbar.navbar-dark.bg-dark
+      .container
+        a.navbar-brand(href="/")= brand
+        .row.align-items-center
+          a.btn.btn-dark.shadow.very-rounded.mr-3(href="/")="Home"
+          .dropdown
+            a.btn.btn-secondary.very-rounded.shadow#userdropdown(href="#", role="button",data-toggle="dropdown", aria-haspopup="true",aria-expanded="false")
+              div= user.displayName + " "
+                img(src=user.pictureUrl, style="width:2rem;").rounded-circle
+            .dropdown-menu.very-rounded(aria-labelledby="userdropdown")
+              a.dropdown-item(href="/profile")= "Profile"
+              .dropdown-divider
+              a.dropdown-item(href="/logout")= "Logout"
+    br
     block content
+    
 
     script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js', integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n", crossorigin="anonymous")
     script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", crossorigin="anonymous")

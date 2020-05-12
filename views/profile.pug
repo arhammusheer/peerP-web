@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	.container
+		br
+		.jumbotron.very-rounded
+			.container
+				.row.align-items-center
+					img.rounded-circle(src=user.pictureUrl, style="width: 8rem;")
+					.display-4= user.displayName
+				br
+				.row
+					p
+						|Email: 
+						a(href="mailto:" + user.email, style="text-decoration: none;")=user.email
+

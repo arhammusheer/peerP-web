@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var roomRouter = require('./routes/room');
+
 
 const GOOGLE_CLIENT_ID = "815168898054-nvqai4si3tps738nfdav9bevjbgnv5gs.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "cat0iQCg7V8sgyLyEq6RdfkI";
@@ -72,6 +74,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/room', roomRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

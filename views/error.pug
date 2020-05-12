@@ -1,6 +1,9 @@
-extends layout
+extends public_layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  br
+  br
+  .container
+    h1= message
+    h2= error.status
+    pre #{error.stack}

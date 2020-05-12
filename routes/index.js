@@ -9,6 +9,12 @@ router.get('/', urlController.home);
 // route for logout action
 router.get('/logout', urlController.logout);
 
+// login handler
+router.get('/login', urlController.login);
+
+//profile page
+router.get('/profile', urlController.profile);
+
 // google Auth
 router.get('/auth/google',passport.authenticate('google', { scope: ['profile','email'] }));
 

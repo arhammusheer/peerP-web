@@ -2,9 +2,9 @@ extends layout
 
 block content
   .container
+    .row.justify-content-between
+      h3= "My Rooms"
+      div
+        a.btn.btn-primary.very-rounded(href="/room/new")= "New Room"
     br
-    br
-    h1= title
-    img(src=user.pictureUrl, style="width:2rem;").rounded-circle
-    br
-    p Hi #{user.displayName} #{user.email}
+    .card-columns

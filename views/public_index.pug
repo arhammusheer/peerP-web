@@ -1,6 +1,15 @@
 extends public_layout
 
 block content
-  .container
-    br
-    a.btn.btn-primary.rounded-circle(href='/auth/google'): .ri-google-fill
+  nav.navbar.navbar-dark.bg-dark
+    .container
+      a.navbar-brand(href="/")= brand
+      a.btn.btn-primary.very-rounded.shadow(href="/login")= "Login with "
+        i.ri-google-fill.align-middle
+  br
+  .container 
+    .jumbotron.very-rounded
+      .container
+        .display-3= brand
+        br
+        p= "A simple plug and play service to connect with friends"

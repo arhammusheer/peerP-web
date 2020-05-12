@@ -1,0 +1,11 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.very-rounded {
+    border-radius: 1.5rem !important;
+}
+
+a {
+    text-decoration: none;
+}
